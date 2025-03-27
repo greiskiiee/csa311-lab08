@@ -7,7 +7,7 @@ package frogger;
  */
 public class Road {
 
-    private boolean[] occupied;
+    private final boolean[] occupied;
 
     public Road(boolean[] occupied) {
         this.occupied = occupied;

@@ -7,13 +7,16 @@ package frogger;
  */
 public class Frogger {
 
-    // Field for task 1.
     private final Road road;
     private int position;
+    private final Records records;
+    private final FroggerID froggerID;
 
-    public Frogger(Road road, int position) {
+    public Frogger(Road road, int position, Records records, FroggerID froggerID) {
         this.road = road;
         this.position = position;
+        this.records = records;
+        this.froggerID = froggerID;
     }
 
     /**
@@ -31,7 +34,7 @@ public class Frogger {
         return true;
     }
 
-    public int getPosition() {
-        return position;
+    public boolean recordMyself() {
+        return records.addRecord(froggerID);
     }
 }
