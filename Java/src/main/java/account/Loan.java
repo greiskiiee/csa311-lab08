@@ -10,10 +10,10 @@ public class Loan extends PaymentAccount {
     private int balanceRemaining;
     private final int minimumMonthlyPayment;
 
-    public Loan(String accountHolder, int accountNumber, int balanceRemaining, int monthlyPayment) {
+    public Loan(String accountHolder, int accountNumber, int balanceRemaining, int minimumMonthlyPayment) {
         super(accountHolder, accountNumber);
         this.balanceRemaining = balanceRemaining;
-        this.minimumMonthlyPayment = monthlyPayment;
+        this.minimumMonthlyPayment = minimumMonthlyPayment;
     }
 
     @Override
@@ -21,16 +21,16 @@ public class Loan extends PaymentAccount {
         if (amount < this.minimumMonthlyPayment) {
             return false;
         }
-        this.balanceRemaining -= amount;
+        balanceRemaining -= amount;
         return true;
     }
 
     public int getBalanceRemaining() {
-        return this.balanceRemaining;
+        return balanceRemaining;
     }
 
     public int getMinimumMonthlyPayment() {
-        return this.minimumMonthlyPayment;
+        return minimumMonthlyPayment;
     }
 
 }

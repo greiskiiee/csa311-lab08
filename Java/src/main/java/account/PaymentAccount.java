@@ -18,10 +18,10 @@ public abstract class PaymentAccount {
     public abstract boolean pay(int amount);
 
     public int getAccountNumber() {
-        return this.accountNumber;
+        return accountNumber;
     }
 
     public String getAccountHolder() {
-        return this.accountHolder;
+        return accountHolder;
     }
 }

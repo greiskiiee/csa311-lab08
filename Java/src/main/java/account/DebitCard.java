@@ -14,15 +14,16 @@ public class DebitCard extends PaymentAccount {
         this.balance = balance;
     }
 
+    @Override
     public boolean pay(int amount) {
-        if (this.balance >= amount) {
-            this.updateBalance(amount);
+        if (balance >= amount) {
+            balance -= amount;
             return true;
         }
         return false;
     }
 
-    private void updateBalance(int amount) {
-        this.balance -= amount;
+    public int getBalance() {
+        return balance;
     }
 }
